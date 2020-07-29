@@ -1,0 +1,19 @@
+{
+  "name": "clapd",
+  "version": "1.0.0",
+  "description": "clip sharing, rip raring",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/whuds/clapd.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/whuds/clapd/issues"
+  },
+  "homepage": "https://github.com/whuds/clapd#readme"
+}
