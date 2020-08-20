@@ -1,0 +1,12 @@
+.searchbar {
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+}
+.icon:hover {
+  fill: #DA4567;
+}
+
+.upload{
+    fill: #DA4567;
+}
