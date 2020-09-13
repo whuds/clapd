@@ -1,5 +1,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+RUN `yarn dev` after installing in both folders to run app
+
 ## Available Scripts
 
 In the project directory, you can run:
