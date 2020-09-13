@@ -1,14 +1,21 @@
 import React, { useState } from 'react';
-import logo from './logo.svg';
-import './App.css';
 import {firestore, storage} from './firebase.js'
 
-function App() {
+function Home() {
 	var doc = 'placeholder';
 
     const [user, setUser] = useState("placeholder");
     const [showVideo, setVideo] = useState(false);
     const [vidURL, setURL] = useState("placeholderURL")
+    const [response, setResponse] = useState("placeholder")
+
+    async function callApi(){
+    	const response = await fetch('/api/hello');
+    	const body = await response.json();
+    	if (response.status !== 200) throw Error(body.message);
+    	setResponse(body.express);
+    	return body;
+  	};
 
 	async function getUsers() {
 		const user1 = firestore.collection("users").doc("EnIePj6PjLfizBzlhPfd");
@@ -39,11 +46,8 @@ function App() {
 
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-     
-        Upload, edit, and share your clips with the world. 
+    <div>
+
 		<button onClick={getUsers}>
 		  Users
 		</button>
@@ -52,10 +56,10 @@ function App() {
 
       {/*<video src='https://storage.googleapis.com/clapd-284917.appspot.com/thommyGif1.mp4' controls />*/}
       {showVideo?<video src={vidURL} controls />:null}
-      {console.log(vidURL)}
-      </header>
+      <button onClick={callApi}>CLick for API</button>
+      <h1>{response}</h1>
     </div>
   );
 }
 
-export default App;
+export default Home;

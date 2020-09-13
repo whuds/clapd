@@ -12,6 +12,13 @@ import {
   Button
 } from "reactstrap";
 
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+
 import { SearchBar } from "./SearchBar.js";
 
 import upload from './upload.svg';
@@ -34,7 +41,9 @@ function NavBar() {
   return (
     <div>
       <Navbar color="dark" dark expand="md">
-        <NavbarBrand href="/">clapd</NavbarBrand>
+        <Link to="/">
+          <NavbarBrand href="/">clapd</NavbarBrand>
+        </Link>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar >
@@ -50,7 +59,9 @@ function NavBar() {
           <div className='searchbar'>
             <SearchBar />
           </div>
-          <img className='upload' height={40} src={upload} alt='Upload' />
+          <Link to="/upload">
+            <img className='upload' height={40} src={upload} alt='Upload' />
+          </Link>
           {' '}
           <Button className='login'>Log In</Button>
         </Collapse>

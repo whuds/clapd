@@ -5,10 +5,19 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { NavBar } from "./Navbar/Navbar.js";
 
+import {
+  BrowserRouter as Router,
+} from "react-router-dom";
+
+
+
 ReactDOM.render(
   <React.StrictMode>
-    <NavBar />
-    <App />
+
+    <Router>
+    	<NavBar />
+    	<App />
+    </Router>
   </React.StrictMode>,
   document.getElementById('root')
 );

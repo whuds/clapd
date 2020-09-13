@@ -1,19 +1,16 @@
 {
-  "name": "clapd",
-  "version": "1.0.0",
-  "description": "clip sharing, rip raring",
-  "main": "index.js",
+  "name": "clapd-server",
+  "version": "0.0.1",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "client": "cd client && yarn start",
+    "server": "nodemon server.js",
+    "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\""
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/whuds/clapd.git"
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4"
   },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/whuds/clapd/issues"
-  },
-  "homepage": "https://github.com/whuds/clapd#readme"
+  "devDependencies": {
+    "concurrently": "^4.0.1"
+  }
 }
